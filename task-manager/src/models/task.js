@@ -1,27 +1,25 @@
 const mongoose = require('mongoose');
 
-const Tasks = mongoose.model('Tasks', {
-    description: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    
-    completed: {
-        type: Boolean,
-        default: false
+const taskSchema = new mongoose.Schema(
+    {
+        description: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        
+        completed: {
+            type: Boolean,
+            default: false
+        }
     }
-});
+)
 
-const task = new Tasks({
-    description: 'kgfdfghjklt',
-    completed: false
-});
+taskSchema.pre('save', async function(next) {
+    const task = this
+    next();
+})
 
-task.save().then(() => {
-    console.log(task);
-}).catch((error) => {
-    console.log('Error', error);
-});
+const Tasks = mongoose.model('Tasks', taskSchema);
 
 module.exports = Tasks;
