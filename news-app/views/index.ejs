@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Article</title>
+ 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href="/css/style.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div>
+           <h1>News API</h1>
+
+           <div class="card" style="width: 100%;">
+                    <% articles.forEach(function (article, index) { %>
+                    
+                        <div class="card-body">
+                            <h2 class="card-title"><%= article.title %></h2>                   
+                            <h6 class="card-subtitle mb-2 text-muted"><%= article.publishedAt %></h6>  
+                            
+                            <div class="container">
+                                <img src="<%= article.urlToImage %>" class="container-img" style="width: 180px;">
+                                <p class="container-text"> <%= article.description %></p>  
+                            </div> 
+                            
+                            <a href="<%- article.url%>" class="button">Read More..</a>                           
+                        </div>
+                   
+                   <%  }) %>
+            </div>
+    </body>
+</html>
