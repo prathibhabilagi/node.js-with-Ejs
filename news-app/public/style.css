@@ -1,0 +1,40 @@
+body {
+    margin: 0;   
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;;
+    background-color: #202124;
+    color: #ffffff;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold; 
+    padding: 12px;
+}
+
+h2 {
+    background: transparent;
+    font-size: 26px;
+}
+
+.card-body{
+    padding: 10px;
+    margin: 15px;
+    border: 1px solid #5f6368;
+    border-radius: 15px;
+}
+ 
+.container-text{
+    text-align: justify;
+    display: inline;
+    padding: 10px;
+}
+.container-img {
+    margin: auto 10px 10px 0px;
+    float: left;
+}
+
+.button {
+    color: #8ab4f8;
+    font-weight: 500;
+    margin: 2px 0 4px 0;
+}
